@@ -43,6 +43,72 @@ public class AfishaManagerTest {
         assertEquals(3, films.length);
     }
 
+    @Test
+    public void shouldNonLastFilms() {
+        AfishaManager manager = new AfishaManager();
+        Film[] films = manager.findLast();
 
+        assertEquals(0, films.length);
+    }
+
+    @Test
+    public void shouldOneLastFilm() {
+        AfishaManager manager = new AfishaManager();
+
+        Film film = new Film("Sun");
+        manager.add(film);
+        Film[] films = manager.findLast();
+
+        assertEquals(1, films.length);
+    }
+
+    @Test
+    public void shouldLotsLastFilms() {
+        AfishaManager manager = new AfishaManager();
+
+        Film film1 = new Film("Sun");
+        manager.add(film1);
+
+        Film film2 = new Film("Moon");
+        manager.add(film2);
+
+        Film film3 = new Film("Star");
+        manager.add(film3);
+
+        Film[] films = manager.findLast();
+
+        assertEquals(3, films.length);
+    }
+
+    @Test
+    public void shouldAllLastFilms() {
+        AfishaManager manager = new AfishaManager(5);
+
+        Film film1 = new Film("Sun");
+        manager.add(film1);
+
+        Film film2 = new Film("Moon");
+        manager.add(film2);
+
+        Film film3 = new Film("Star");
+        manager.add(film3);
+
+        Film film4 = new Film("Wind");
+        manager.add(film4);
+
+        Film film5 = new Film("Snow");
+        manager.add(film5);
+
+        Film film6 = new Film("Storm");
+        manager.add(film6);
+
+
+        Film[] films = manager.findLast();
+
+        assertEquals(5, films.length);
+
+
+
+    }
 
     }
