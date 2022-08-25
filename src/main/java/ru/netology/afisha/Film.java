@@ -1,11 +1,10 @@
 package ru.netology.afisha;
 
-public class Film
-{
+public class Film {
     public Film(String filmName) {
-        Name = filmName;
+        name = filmName;
     }
 
-    public String Name;
+    public String name;
 
 }
